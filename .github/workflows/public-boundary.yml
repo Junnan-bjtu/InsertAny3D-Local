@@ -1,0 +1,43 @@
+name: Public boundary
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Check public files
+        run: |
+          python3 tools/check_public_boundary.py
+          python3 tools/sync_remote_runtime.py verify-lock
+      - name: Check bootstrap scripts
+        run: |
+          bash -n tools/bootstrap_third_party.sh tools/download_models.sh
+          bash tools/bootstrap_third_party.sh --check
+      - name: Compile public Python entry points
+        run: |
+          python3 -m py_compile \
+            tools/check_public_boundary.py \
+            tools/model_center/cli.py \
+            tools/run_insert_batch.py \
+            tools/run_insert_pipeline.py \
+            tools/sync_remote_runtime.py \
+            tools/stage_adapter.py \
+            tools/test_stage_adapter.py
+      - name: Run offline core tests
+        run: |
+          python3 tools/run_insert_pipeline.py --help >/dev/null
+          python3 tools/run_insert_batch.py --help >/dev/null
+          python3 -m unittest discover -s tests -v
+          python3 tools/test_stage_adapter.py
+          python3 tools/test_insert_batch.py

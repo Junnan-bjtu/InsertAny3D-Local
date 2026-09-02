@@ -1,0 +1,53 @@
+# Python environments, caches and build products
+**/.venv/
+**/__pycache__/
+*.py[cod]
+**/*.egg-info/
+**/.cache/
+/.cache/
+/.build/
+**/build/
+**/dist/
+
+# Credentials and machine-local configuration
+.env
+.env.*
+!.env.example
+/.insertany3d/
+*.key
+*.pem
+*.secret
+*.token
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+*.swp
+*.ipynb
+
+# Inputs and generated run data stay outside this repository
+/runs/
+/debug_bundles/
+/reproduction_outputs/
+/rendered_from_unity/
+/InsertRuns/
+/InsertDebug/
+/data/*
+!/data/README.md
+
+# Server runtimes, models and third-party checkouts are separate sources.
+/server/
+/third_party/
+**/weights/
+**/check_points/
+**/checkpoints/
+**/model_weights/
+**/huggingface/
+**/*.pth
+**/*.pt
+**/*.ckpt
+**/*.safetensors
+**/*.bin
+*.zip
+*.tar

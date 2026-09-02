@@ -1,0 +1,277 @@
+{
+  "schemaVersion": 1,
+  "kind": "insertany3d.remote-runtime-lock",
+  "sourceAuthority": "server_checkout",
+  "files": [
+    {
+      "path": "auto_segment.py",
+      "sha256": "c88d7f1a161aa3f788f12dbaa17f71566e681eb35bd0bdff9b8fc4ac2b4d7bdb",
+      "size": 15784
+    },
+    {
+      "path": "build_debug_bundle.py",
+      "sha256": "d9aaf21d5d42358e8c9cd17eb0279ea27d2b6951eb341a5252de8f5c04fe64f5",
+      "size": 34632
+    },
+    {
+      "path": "clip_image_similarity.py",
+      "sha256": "96426f95107d7c65b075602ca60a04f3a201f8321228bddb88a2d0be8eb04c43",
+      "size": 3762
+    },
+    {
+      "path": "estimate_similarity_pose.py",
+      "sha256": "5bee8eb4332116a8fe54de1332c35c720e6633fb78f8e6a6638f7e16705b5122",
+      "size": 60932
+    },
+    {
+      "path": "gaussian_model.py",
+      "sha256": "5d1b1b54653b9f80ec356aaf18d68707695cad2a84cf3d72ea0166975afe7330",
+      "size": 10523
+    },
+    {
+      "path": "gemini_edit.py",
+      "sha256": "7a806fc40bb00cbf931cdbdce9d66d7560fbe68f09c83f26fc957b08a2100ce6",
+      "size": 14617
+    },
+    {
+      "path": "generate_trellis_asset.py",
+      "sha256": "8853a880706243a653905b50b5ac03efcd37919c8c6c7db4fa0bffe1c47f9c17",
+      "size": 8037
+    },
+    {
+      "path": "insertany3d_render_utils.py",
+      "sha256": "3ea58be7439521fad658c7ccd301e794145f5e3de1ef51716d0407057b0d98e3",
+      "size": 11040
+    },
+    {
+      "path": "model_center/__init__.py",
+      "sha256": "f7d50ec992aa387d2448264d44139d746022e6183f3b1e284c0047f57759e95c",
+      "size": 665
+    },
+    {
+      "path": "model_center/cli.py",
+      "sha256": "69ff17ad47ab2bb5ae07a855b6daa535e44ba346c8f930f60626dbda7d8b8a42",
+      "size": 9192
+    },
+    {
+      "path": "model_center/config.py",
+      "sha256": "6cdd147fcc9127350126f56bb1948f91d0a486ad5bfe17b2b6683bb2eb9a0fd5",
+      "size": 6675
+    },
+    {
+      "path": "model_center/contracts.py",
+      "sha256": "3cb6a4d749454135d41181b15923509851df4c462a77293a214214a2269bf65b",
+      "size": 13005
+    },
+    {
+      "path": "model_center/converters/__init__.py",
+      "sha256": "6ed1c4699a2a495c2db7e41a50522e0767ef349cc3a339edd84034681ebb143a",
+      "size": 129
+    },
+    {
+      "path": "model_center/converters/mesh_to_gaussian.py",
+      "sha256": "b25670558eb8718d9a4387f5ad405185a4f40dffa9f3839ee50810c95882502d",
+      "size": 11680
+    },
+    {
+      "path": "model_center/orchestrator.py",
+      "sha256": "42cfff046419941f8510b4f0ec335b9b360b9ab058dee9a0cfb15c9a82ea8617",
+      "size": 3309
+    },
+    {
+      "path": "model_center/provider_runner.py",
+      "sha256": "b12380e26d2797b4dc4e798195c0ba3f4896fe180b34d827d453d108c87a57ab",
+      "size": 28201
+    },
+    {
+      "path": "model_center/providers/__init__.py",
+      "sha256": "79a8a950f42e7aaad4b2c8ee10ed98080229a345c19fe6f1d53e790eee5c11ca",
+      "size": 291
+    },
+    {
+      "path": "model_center/providers/base.py",
+      "sha256": "cfc23c0aea259aa18fb13d8aecf5348a6687b70b0502f5452159b2cc5684b667",
+      "size": 3686
+    },
+    {
+      "path": "model_center/providers/hunyuan.py",
+      "sha256": "c5aebc96b74f6511740413974f072644097f6587d70157d341c7f83e388db0ff",
+      "size": 1515
+    },
+    {
+      "path": "model_center/providers/sam3d.py",
+      "sha256": "69bd4d4971ab548ba8f46804e76e02f76e411eddb8fef40c102605187c4ad8ca",
+      "size": 3293
+    },
+    {
+      "path": "model_center/providers/trellis.py",
+      "sha256": "fb3198931552445b92b933150b1d13fc321f65d9e396cb3da29170944db75c71",
+      "size": 2243
+    },
+    {
+      "path": "model_center/registry.py",
+      "sha256": "dd19a3a362360a2a3d365ff485620f7d65656c091e8bd96fde77fe2d2e378390",
+      "size": 6476
+    },
+    {
+      "path": "model_center/renderers/__init__.py",
+      "sha256": "783f148d31aa403df2560752703dc4570466cb53d0e6a31742233d66350c0dc8",
+      "size": 136
+    },
+    {
+      "path": "model_center/renderers/provider_render.py",
+      "sha256": "24d47c626239d97e802d44d7615d4f27d3112f4d57ab04eab00f928fe5cd5fe9",
+      "size": 1980
+    },
+    {
+      "path": "model_center/sam3d.py",
+      "sha256": "87b601a429a7b43e7a602a156cde03eec0cbac38d14a50660992255718278ce4",
+      "size": 2702
+    },
+    {
+      "path": "model_center/segmentation/__init__.py",
+      "sha256": "55e17e10e43e1faedf7207e4749d89b60acfdbeb26c8b59ac9d7dcf635837397",
+      "size": 152
+    },
+    {
+      "path": "model_center/segmentation/engines.py",
+      "sha256": "e9a7ef52a2f1e68fed58fe8b5b22b0083aaa8d2e8bdcbf89f7a2b9f2fd497756",
+      "size": 1031
+    },
+    {
+      "path": "model_center/segmentation/manager.py",
+      "sha256": "d06fd4c88e3db477890107f9ce306d73cd65f286178c8f1341854494c62898ee",
+      "size": 5467
+    },
+    {
+      "path": "model_center/tests/__init__.py",
+      "sha256": "b4986610a12f1dcbed7bbba8dc88c8d6099e8873eba1a139291a5c0864f9b418",
+      "size": 31
+    },
+    {
+      "path": "model_center/tests/test_model_center.py",
+      "sha256": "31bbdc1a6330493378f382b04dab671658b84b3eba37551cab1e05735abe56ff",
+      "size": 11278
+    },
+    {
+      "path": "model_center/transforms/__init__.py",
+      "sha256": "20b7be7c442f510765d2d31e332f00dfbf74cf0bdb673eeb3c41d4380f30e2b2",
+      "size": 126
+    },
+    {
+      "path": "model_center/transforms/base.py",
+      "sha256": "172b71b85fc92dc0aecf8985e24d93f582f9766b924d9e4ffb5ee789f252cc72",
+      "size": 464
+    },
+    {
+      "path": "model_center/transforms/gaussian_ply.py",
+      "sha256": "9e31d6c76d1ee29e4ff24df4a924a23f384b1befab19cdeec66a57c64254d82a",
+      "size": 6112
+    },
+    {
+      "path": "model_center/transforms/hunyuan.py",
+      "sha256": "922cd0ebf3568f709a5f5e14996a4cf3e8a767ed8e69287d8e6bee5e341fcc25",
+      "size": 275
+    },
+    {
+      "path": "model_center/transforms/sam3d.py",
+      "sha256": "0eb3127ec0e2edf771a499788578de6ed5075fb1400e62b26d9fec567812a953",
+      "size": 267
+    },
+    {
+      "path": "model_center/transforms/trellis.py",
+      "sha256": "6bc97c0f4546cab9ee55385a586912c9e9c29419529c2d6f7ce6ff08b483dbb3",
+      "size": 275
+    },
+    {
+      "path": "render_trellis_3dgs.py",
+      "sha256": "ab92654f59f85f29564586791126e0f1af04673fb67f2edc949c26ed0bf9deec",
+      "size": 3695
+    },
+    {
+      "path": "render_trellis_views.py",
+      "sha256": "a3151b1e5f7c83f9fbce67934ce80d0e805a25117d35ed579a9986176a299fc8",
+      "size": 16487
+    },
+    {
+      "path": "render_utils.py",
+      "sha256": "04e8a66d416f45cbff7358f6372601c4996ba87e3ea83f8d3ac0eaaae250d03f",
+      "size": 9755
+    },
+    {
+      "path": "run_gim_match.py",
+      "sha256": "7fed06fb01b269a0fe566387824b532850afce5fd19d677557cdebea92e2e3b0",
+      "size": 21781
+    },
+    {
+      "path": "run_insert_batch.py",
+      "sha256": "a313ba395628575d957dedb269c5df351006effbaf1952ed9a1b3950c076eed0",
+      "size": 28819
+    },
+    {
+      "path": "run_insert_pipeline.py",
+      "sha256": "d7af7cc9c8a0dae5cdd41c0b1492aa5b880330aba20ea768e951ce4ad8dd4b8f",
+      "size": 105124
+    },
+    {
+      "path": "run_sags_text.py",
+      "sha256": "37e001f2df025a17894576fd0f1857a3bec81bd151f4f0d1c152f14f508f88fe",
+      "size": 31686
+    },
+    {
+      "path": "sags_gaussian_renderer.py",
+      "sha256": "ca2bc31100fe0e4919168132617bcf8dd1577f3c75566278e3cc52cc402a3ee3",
+      "size": 4736
+    },
+    {
+      "path": "segment_anchor_views.py",
+      "sha256": "f8b5404d0e7d07bdd3d421dc8a9eef922d96dbd16210d7f84a1c1ec4a3330829",
+      "size": 6506
+    },
+    {
+      "path": "segment_image.py",
+      "sha256": "6c19e898d52bd58bebb5b067f8293210212e0e58f1c64ffe3b7cf1c3f29cfb59",
+      "size": 5141
+    },
+    {
+      "path": "select_trellis_yaw.py",
+      "sha256": "5b03c23ec282e3f1cad11153c70fef6ad45861b203d354d7974e38082476adf7",
+      "size": 6132
+    },
+    {
+      "path": "stage_adapter.py",
+      "sha256": "3bb8cd454314b016aa7a0463d03506e53d23b32efd54edf44d1aa4d86b3eea45",
+      "size": 73047
+    },
+    {
+      "path": "test_estimate_similarity_pose.py",
+      "sha256": "be80b59b5932ba206b4170207283e65c36930927fd65219533ef89758770931d",
+      "size": 14769
+    },
+    {
+      "path": "test_gemini_edit.py",
+      "sha256": "cfd7df036b407168b3d61ab35271ef67a5e6205c48fb718f3dcf8141a4c8af96",
+      "size": 5234
+    },
+    {
+      "path": "test_insert_batch.py",
+      "sha256": "4872077b7c1581194472dd4625c1501f08c1c1128d2ff4655ebda79bacf327a1",
+      "size": 5979
+    },
+    {
+      "path": "test_stage_adapter.py",
+      "sha256": "41f730fbcaf027cc3a8655e34eafe39cae1886d0cf8a322cd30395dfda305194",
+      "size": 23245
+    },
+    {
+      "path": "test_workspace.py",
+      "sha256": "cd5bfee0cb33b3b26072342c433161bfe21328b50b259db18acfac34d69aa145",
+      "size": 3762
+    },
+    {
+      "path": "workspace.py",
+      "sha256": "355d9aa4503d3f4769f93fdf3defef1bef638c788e95ab781288f601cfd78b1b",
+      "size": 8489
+    }
+  ]
+}

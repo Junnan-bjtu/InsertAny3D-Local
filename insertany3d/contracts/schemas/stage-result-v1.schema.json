@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://github.com/Junnan-bjtu/InsertAny3D/schemas/stage-result-v1.schema.json", "title": "InsertAny3D stage result v1", "type": "object",
+  "required": ["schemaVersion", "kind", "batchId", "projectId", "taskId", "stage", "contractVersion", "attempt", "leaseToken", "status", "artifacts", "diagnosticPaths", "cleanup", "finishedAtUtc"],
+  "properties": {
+    "schemaVersion": {"const": 1}, "kind": {"const": "insertany3d.stage-result"}, "batchId": {"type": "string"}, "projectId": {"type": "string"}, "taskId": {"pattern": "^Task_00[1-5]$"}, "stage": {"type": "string"}, "contractVersion": {"type": "string", "minLength": 1}, "attempt": {"type": "integer", "minimum": 1}, "leaseToken": {"type": "string"},
+    "status": {"enum": ["succeeded", "failed_retryable", "failed_terminal", "rejected", "canceled"]}, "artifacts": {"type": "array"}, "errorCode": {"type": ["string", "null"]}, "message": {"type": ["string", "null"]}, "diagnosticPaths": {"type": "array", "items": {"type": "string"}}, "cleanup": {"type": "object", "required": ["completed"], "properties": {"completed": {"type": "boolean"}}, "additionalProperties": true}, "finishedAtUtc": {"type": "string"}, "timing": {"type": "object", "properties": {"queuedAtUtc": {"type": "string"}, "slotAcquiredAtUtc": {"type": ["string", "null"]}, "requestStartedAtUtc": {"type": ["string", "null"]}, "requestEndedAtUtc": {"type": ["string", "null"]}, "finishedAtUtc": {"type": "string"}, "queueWaitSeconds": {"type": ["number", "null"], "minimum": 0}, "apiRequestSeconds": {"type": ["number", "null"], "minimum": 0}, "stageElapsedSeconds": {"type": "number", "minimum": 0}}, "additionalProperties": false}
+  }, "additionalProperties": false
+}

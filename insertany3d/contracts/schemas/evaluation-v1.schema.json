@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://github.com/Junnan-bjtu/InsertAny3D/schemas/evaluation-v1.schema.json", "title": "InsertAny3D eval6 manifest v1", "type": "object",
+  "required": ["schemaVersion", "kind", "protocol", "batchId", "projectId", "scenePath", "taskId", "runId", "methodId", "taskPrompt", "viewConfig", "render", "views"],
+  "properties": {
+    "schemaVersion": {"const": 1}, "kind": {"const": "insertany3d.evaluation"}, "protocol": {"const": "eval6-v1"}, "batchId": {"type": "string"}, "projectId": {"type": "string"}, "scenePath": {"type": "string"}, "taskId": {"pattern": "^Task_00[1-5]$"}, "runId": {"type": "string"}, "methodId": {"type": "string"}, "taskPrompt": {"type": "string", "minLength": 1},
+    "viewConfig": {"type": "object", "required": ["pitchDegrees", "yawOffsetDegrees", "sha256"], "properties": {"pitchDegrees": {"const": [10, 40]}, "yawOffsetDegrees": {"type": "number", "exclusiveMinimum": 0}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": true},
+    "render": {"type": "object", "required": ["width", "height", "cameraConvention"], "properties": {"width": {"type": "integer", "minimum": 1}, "height": {"type": "integer", "minimum": 1}, "cameraConvention": {"type": "string"}}, "additionalProperties": true},
+    "views": {"type": "array", "minItems": 6, "maxItems": 6, "items": {"type": "object", "required": ["viewId", "pitchDegrees", "yawOffsetDegrees", "original", "inserted", "camera"], "properties": {"viewId": {"enum": ["low_left", "low_center", "low_right", "high_left", "high_center", "high_right"]}, "pitchDegrees": {"type": "number"}, "yawOffsetDegrees": {"type": "number"}, "original": {"$ref": "#/$defs/file"}, "inserted": {"$ref": "#/$defs/file"}, "camera": {"$ref": "#/$defs/file"}}, "additionalProperties": false}}
+  },
+  "$defs": {"file": {"type": "object", "required": ["path", "sha256"], "properties": {"path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": false}}, "additionalProperties": true
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Junnan-bjtu/InsertAny3D/schemas/stage-request-v1.schema.json",
+  "title": "InsertAny3D stage request v1",
+  "type": "object",
+  "required": ["schemaVersion", "kind", "batchId", "projectId", "taskId", "stage", "contractVersion", "attempt", "leaseToken", "inputs", "effectiveConfig", "effectiveConfigSha256", "outputStagingDir"],
+  "properties": {
+    "schemaVersion": {"const": 1}, "kind": {"const": "insertany3d.stage-request"},
+    "batchId": {"type": "string"}, "projectId": {"type": "string"}, "taskId": {"pattern": "^Task_00[1-5]$"},
+    "stage": {"enum": ["unity_anchor", "image_edit", "edit_gate", "upload_inputs", "model_generation", "render_alignment_views", "segment_inputs", "gim_match", "estimate_pose", "sags_segment_vote", "debug_bundle", "download_results", "unity_apply", "unity_eval6", "evaluate_absolute"]},
+    "contractVersion": {"type": "string", "minLength": 1}, "attempt": {"type": "integer", "minimum": 1}, "leaseToken": {"type": "string", "minLength": 1},
+    "inputs": {"type": "array", "items": {"$ref": "#/$defs/artifact"}}, "effectiveConfig": {"type": "object"}, "effectiveConfigSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "outputStagingDir": {"type": "string", "minLength": 1}
+  },
+  "$defs": {"artifact": {"type": "object", "required": ["artifactId", "path", "sha256"], "properties": {"artifactId": {"type": "string"}, "path": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}, "additionalProperties": true}},
+  "additionalProperties": false
+}

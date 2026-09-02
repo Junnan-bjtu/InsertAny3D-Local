@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "kind": "insertany3d.batch",
+  "batchId": "draft_one_task",
+  "defaultsRef": "codex_ops/insert_workflow.defaults.json",
+  "renderProfile": "eval6",
+  "renderProtocol": {
+    "protocol": "eval6-v1"
+  },
+  "resources": {
+    "unitySlots": 1,
+    "imageApi": {"mode": "adaptive", "initialLimit": 3, "maximumLimit": 5},
+    "remoteGpuPool": [1]
+  },
+  "editPolicy": {},
+  "remoteProfile": "server-default",
+  "projects": [
+    {
+      "projectId": "PrivateScene_01",
+      "projectPath": "/replace/with/private/unity/project",
+      "scenePath": "Assets/ReplaceWithPrivateScene.unity",
+      "tasks": ["Task_001"]
+    }
+  ]
+}

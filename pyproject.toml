@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "insertany3d"
+version = "0.1.0"
+description = "Persistent local batch control plane and shared contracts for InsertAny3D"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+dependencies = [
+    "numpy>=2.1,<2.2",
+    "openpyxl>=3.1,<4",
+    "Pillow>=11,<12",
+    "PyYAML>=6,<7",
+]
+
+[project.scripts]
+insertany3d = "insertany3d.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["insertany3d*"]
+
+[tool.setuptools.package-data]
+"insertany3d.contracts" = ["schemas/*.json"]

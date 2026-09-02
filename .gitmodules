@@ -1,0 +1,3 @@
+[submodule "unity/InsertAny3D-Unity"]
+	path = unity/InsertAny3D-Unity
+	url = https://github.com/Junnan-bjtu/InsertAny3D-Unity.git

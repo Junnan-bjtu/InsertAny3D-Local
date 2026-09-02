@@ -1,0 +1,5 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://github.com/Junnan-bjtu/InsertAny3D/schemas/edit-review-v1.schema.json", "title": "InsertAny3D edit review v1", "type": "object",
+  "required": ["schemaVersion", "kind", "taskId", "editAttempt", "status", "decision", "decidedBy", "decidedAtUtc", "policyVersion", "note"],
+  "properties": {"schemaVersion": {"const": 1}, "kind": {"const": "insertany3d.edit-review"}, "taskId": {"pattern": "^Task_00[1-5]$"}, "editAttempt": {"type": "integer", "minimum": 1}, "status": {"enum": ["pending_review", "decided"]}, "decision": {"enum": [null, "accepted", "rejected", "regenerate", "accepted_by_policy"]}, "decidedBy": {"type": ["string", "null"]}, "decidedAtUtc": {"type": ["string", "null"]}, "policyVersion": {"type": ["string", "null"]}, "note": {"type": ["string", "null"]}}, "additionalProperties": false
+}

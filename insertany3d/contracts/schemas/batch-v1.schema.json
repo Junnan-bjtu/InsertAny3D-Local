@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Junnan-bjtu/InsertAny3D/schemas/batch-v1.schema.json",
+  "title": "InsertAny3D batch manifest v1",
+  "type": "object",
+  "required": ["schemaVersion", "kind", "batchId", "defaultsRef", "renderProfile", "renderProtocol", "resources", "editPolicy", "remoteProfile", "projects"],
+  "properties": {
+    "schemaVersion": {"const": 1},
+    "kind": {"const": "insertany3d.batch"},
+    "batchId": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"},
+    "defaultsRef": {"type": "string", "minLength": 1},
+    "renderProfile": {"const": "eval6"},
+    "renderProtocol": {
+      "type": "object",
+      "required": ["protocol"],
+      "properties": {"protocol": {"const": "eval6-v1"}, "viewYawOffsetDegrees": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 180}},
+      "additionalProperties": false
+    },
+    "resources": {
+      "type": "object",
+      "required": ["unitySlots", "remoteGpuPool"],
+      "properties": {
+        "unitySlots": {"type": "integer", "minimum": 1},
+        "editSlotsInitial": {"type": "integer", "minimum": 1, "deprecated": true},
+        "editSlotsMax": {"type": "integer", "minimum": 1, "deprecated": true},
+        "imageApi": {
+          "type": "object",
+          "properties": {
+            "mode": {"enum": ["fixed", "adaptive"], "default": "adaptive"},
+            "limit": {"type": "integer", "minimum": 1},
+            "initialLimit": {"type": "integer", "minimum": 1, "default": 3},
+            "maximumLimit": {"type": "integer", "minimum": 1, "default": 5}
+          },
+          "additionalProperties": false
+        },
+        "remoteGpuPool": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 0}, "uniqueItems": true}
+      },
+      "additionalProperties": false
+    },
+    "editPolicy": {
+      "type": "object",
+      "properties": {
+        "mode": {"enum": ["manual", "automatic"], "default": "manual"},
+        "reviewBatchSize": {"type": "integer", "minimum": 1, "default": 5},
+        "policyVersion": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "remoteProfile": {"type": "string", "minLength": 1},
+    "projects": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/project"}},
+    "pins": {"type": "object"}
+  },
+  "$defs": {
+    "task": {
+      "oneOf": [
+        {"type": "string", "pattern": "^Task_00[1-5]$"},
+        {
+          "type": "object",
+          "required": ["taskId"],
+          "properties": {"taskId": {"type": "string", "pattern": "^Task_00[1-5]$"}, "objectPrompt": {"type": "string"}, "editPrompt": {"type": "string"}},
+          "additionalProperties": true
+        }
+      ]
+    },
+    "project": {
+      "type": "object",
+      "required": ["projectId", "projectPath", "scenePath", "tasks"],
+      "properties": {
+        "projectId": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"},
+        "projectPath": {"type": "string", "minLength": 1},
+        "scenePath": {"type": "string", "pattern": "^Assets/.+\\.unity$"},
+        "tasks": {"type": "array", "items": {"$ref": "#/$defs/task"}},
+        "unityVersion": {"type": "string"},
+        "manifestSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "packagesLockSha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
